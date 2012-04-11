@@ -1,5 +1,11 @@
-tmp/
-coverage/
-.sass-cache/
+.bundle
+db/*.sqlite3
 config/database.yml
-log/
+log/*.log
+tmp/
+.sass-cache/
+*.swp
+.rvmrc
+*.tmproj
+*.DS_Store
+coverage
