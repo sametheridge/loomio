@@ -43,12 +43,12 @@
 
 <p>Loomio is a Ruby on Rails application. If you're new to Ruby on Rails, you can have a read through our <a href="https://docs.google.com/document/d/1RmNrYHXuxiANa0h1MIBt_4d-X41w-fOw7Ohf3hwEhcA/edit">Loomio Getting Started</a> document and it should help you get set up. If you're already familiar with Rails then the setup should be pretty simple. Just run the following commands and you should be good to go.</p>
 
-<pre><code>$ git clone https://jonlemmon@github.com/enspiral/loomio.git
+<pre><code>$ git clone git@github.com:enspiral/loomio.git
 $ cd loomio
 $ bundle install
 $ cp config/database.example.yml config/database.yml
-$ bundle exec rake db:setup
-$ bundle exec rake db:seed
+$ bundle exec rake db:setup; bundle exec rake db:setup RAILS_ENV=test;
+$ bundle exec rake db:seed; bundle exec rake db:seed RAILS_ENV=test;
 </code></pre>
 
 <p>We keep track of project management using the <a href="https://trello.com/board/loomio-development/4eb8a2ef43e06d000072b5fd">Loomio Trello Board</a>. Feel free to have a look at the board while you're checking out the code to see if there might be any tasks that you'd feel comfortable taking on.</p>
@@ -71,7 +71,7 @@ $ bundle exec rake db:seed
       </footer>
     </div>
 
-    
+
 
   </body>
 </html>
