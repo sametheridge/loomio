@@ -1,0 +1,5 @@
+-publish_to "/discussions/#{@discussion.id}" do
+  $(".message##{@message.parent_id} .replies").append("#{j render(@message)}");
+  $(".message##{@message.id}").hide()
+  $(".message##{@message.id}").fadeIn(500)
+  $(".message##{@message.parent_id} .reply_form form").remove();

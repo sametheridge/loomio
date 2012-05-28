@@ -1,0 +1,17 @@
+.message{id:message.id}
+  %h3 
+    #{message.author.name}
+    %small=l message.created_at
+
+  %p=message.body
+
+  .btn-group
+    %a.useful-button.btn{href: '#'}
+      Useful
+    %a.reply-button.btn{href: '#'}
+      Reply
+    =link_to 'Branch', new_group_discussion_path(@group, message_id: message.id), class: 'btn'
+  .reply_form
+
+  .replies
+    =render message.children

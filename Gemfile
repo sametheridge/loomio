@@ -1,33 +1,38 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.3'
 gem "haml-rails"
 gem 'devise', '~> 2.0.0'
 gem 'devise_invitable', '~> 1.0.0'
+gem 'mysql2'
 gem 'pg'
 gem 'capistrano'
+gem 'ancestry'
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem 'formtastic'
+gem 'simple_form'
 gem 'jqplot-rails'
-gem "rails-backbone"
 gem 'coffee-filter'
-gem 'acts-as-taggable-on', '~> 2.2.2', :git => 'https://github.com/mbleigh/acts-as-taggable-on.git'
 gem 'aasm'
 gem 'cancan'
-gem 'acts_as_commentable_with_threading'
 gem 'draper'
 gem 'exception_notification'
+gem 'private_pub'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'twitter-bootstrap-rails'
-  gem 'bootstrap-sass', '~>2.0.3'
-  gem 'coffee-rails', '~> 3.1.1'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'modernizr-rails', '~> 2.0.6'
+end
+# 
+group :assets do
+  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-sass'
+  gem 'modernizr-rails'
 end
 
 group :development, :test do

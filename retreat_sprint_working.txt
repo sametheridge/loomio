@@ -1,0 +1,66 @@
+build discussion scaffold
+  modify form to have nested message
+
+  nested message in new form
+
+discussion index, with message author, date
+
+leve rating for later
+o
+
+buttons on messages, Rating, and dropdown group for branch, in button group for reply
+fixed width sidebar for motions(in accordian), with add motion in the sidebar.
+
+discussion settings.. sort by rating, age..
+
+discussions index
+
+honour permissions.
+
+maintain small jobs list..
+  fixing datetime format
+  styling messages
+
+motions in rightbar, in an accordian widget..
+prehaps consider spine js, google charts api.
+
+add rating and tagging to messages..
+  keep a rating integer up to date on the message
+  useful button
+
+something about require resolution, and keep track of unresolved
+threads.
+
+message.subscribers - those people who should be updated if there is a
+new reply
+group_membership.notify_on([new_discussion, new_motion]
+user.notify_on
+
+Notification settings
+  copy notification settings from goalpost
+  email when mentioned and replied to
+  per group
+    send daily digest email
+    email on new discussion 
+    new motion
+
+Record last time a discussion was read by a user.
+
+messages new than that time.
+
+Show number of users online per group.
+
+use spine for notifications. use websocket to keep upto date.
+
+talk about experimenting with functions, talk about how you might like
+to analyse a dicussion..
+  total participation
+  something to show how distributed the conversation is.
+  list showing number of messages per person.
+  icon next to message author showing their position in num_messages list.
+  offer to weight by least, most outspoken, google chart showing spread
+of messages. number of messages on x, number of people on y
+  send updated discussion stats with a new message
+  spine and live update for motions.
+  
+

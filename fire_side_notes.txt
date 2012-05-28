@@ -1,0 +1,78 @@
+Notes from fireside passion
+
+Signal to noise
+
+Categorising/Rating/Responding/Indicating
+
+  How I feel about this - subjective
+    agreement
+    disagreement
+    provoking
+    angering
+    boring
+  What i think this is - objective
+    bias
+    viral
+    noisy
+    relevant
+    inflammatory
+    concise
+    helpful
+    facilitationary
+
+  how I am feeling right now
+    my mood, angry, calm, inlightened, genius, bored
+
+the basic equivilent to 'like' is 'useful' (to the discussion)
+a ui allowing a response ranging from a simple 'useful' to as detailed categorisation as you like
+
+Judgement call that you think this is important for others to know
+
+Value in putting your name next to the categorisation
+
+awareness of quality of discussion will help groups have better discussions
+
+reddits ability to prviatly tag things onto people. not talked about last night but useful.
+
+splitting the ideas into writing, input, and reading, summarising.
+
+Maybe reddit is a very close to idea concept. and we need to focus on mimiking the discission and appending proposals and concencus.
+
+recoding the way people are filtering the conversation as a way to feedback in karama
+
+replying to two posts at once, replying to a paragraph - like a google docs comment
+
+branching - marking branches as entry points into converstations
+
+sliders limiting views about discussion to avoid overwhelment. same thing to enter information onto comments.
+
+traditinal threaded view can be the starting point to build in most of these features.
+ultimate mode is the too hard basket.. later on basket.
+
+Major Overall Points
+encourage awareness of discussion, know goal of discussion
+
+stage one.. reddit-our way with popositions
+the goal, self aware discussions leading to concensus based decisions
+
+How to we identify when decisions can be made?
+theading discussion had propositions being made too early..
+but was that a terrible thing? 
+what can we learn from that?
+
+this is not complete.. lets go back and harvest all the feature requests and collate them in one place then make a development roadmap.
+
+features form loomio discussion:
+A comment is made, then it can be marked as resolved when it is sufficently worked through. if you could instantly look at a motion and see how many unresolved concerns there were that would be helpful. 
+
+Good email notifications on events. keep track of events and who to notify
+autolink urls
+explain the culture of loomio.. refine what we want to achieve
+
+encouraging brevity of comments
+
+robs idea.. highlight and reply.
+mark/select/highlight sections of concern and notify on resolution - this might be our powerful difference
+
+goal for collation.. to clearly define the features and enable them to be seen, understood.. stop repitition and encourage the new idea, get everyone up to speed
+

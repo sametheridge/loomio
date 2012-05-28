@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   has_many :votes
 
   has_many :discussions, through: :groups
+  has_many :messages, :foreign_key => 'author_id'
   has_many :motions, through: :discussions
   has_many :motions_voting, through: :discussions, :source => :motions, :conditions => {phase: 'voting'}
   has_many :motions_closed, through: :discussions, :source => :motions, :conditions => {phase: 'closed'}
@@ -27,7 +28,6 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
-  acts_as_taggable_on :group_tags
   after_create :ensure_name_entry
 
   def motion_vote(motion)

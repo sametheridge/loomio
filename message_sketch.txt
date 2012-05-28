@@ -1,0 +1,66 @@
+Threaded discussions, with the ability to mark branches as new entry points/discussion heads.
+
+Also ability to spawn propositions/motions from these
+
+messages and motions
+
+posting a message should insert it in place.. 
+
+push messages in a discussion, how to insert the message into the tree as client.
+messages_controller
+  def create
+    
+  end
+
+Class Message < ActiveRecord::Base
+  acts as ancestry
+    #gives parent, children more: https://github.com/stefankroes/ancestry
+  has_many :ratings
+  belongs_to :author, class_name: 'User'
+
+# needle for the thread. how you pickup a thread
+Discussion < ActiveRecord::Base
+  attribtes: title
+  belongs_to message
+  belongs_to group
+
+Rating
+  belongs_to :message
+  belongs_to :author, class_name: 'User'
+  attrs: useful:boolean, null: false, default:true
+
+discussion/show
+  subscribe_to('/discussions/5/)
+  %h1 title
+  =render message
+
+messages/create.js.html
+  <% publish_to "/discussion/5" do %>
+    parent_node = $(".message##{message.parent_id}")
+    parent_node.append("escape_javascript render(@message)");
+  <% end %>
+  
+message/_message.html.haml partial
+  # use messsage db id as div id, for javascipt to do live updates
+  .message#message.id{data: {'message_id': message.id}
+    %h2=message.author.name
+    =message.body
+    # could also include unique anchor
+    %a.reply
+    %a.mark_as_new_discussion
+    %a.rate_as_useful
+    .reply_form
+
+    .replies
+      =render message.children
+
+$('a.reply).click # insert reply form, and update hidden input parent_id
+  clone = $('#hidden_reply_form').clone
+  clone.find('input.parent_id').attr('value') = $(this).message_id
+  $(this).sibling('.reply_form').insert $('message_form')
+
+
+
+
+
+  

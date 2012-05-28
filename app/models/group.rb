@@ -17,7 +17,7 @@ class Group < ActiveRecord::Base
   has_many :admin_memberships,
     :conditions => {:access_level => 'admin'},
     :class_name => 'Membership'
-  has_many :users, :through => :memberships # TODO: rename to members
+  has_many :members, :through => :memberships, source: :user
   has_many :requested_users, :through => :membership_requests, source: :user
   has_many :admins, through: :admin_memberships, source: :user
   has_many :motions
@@ -28,8 +28,6 @@ class Group < ActiveRecord::Base
 
   delegate :include?, :to => :users, :prefix => true
   delegate :users, :to => :parent, :prefix => true
-
-  acts_as_tagger
 
   attr_accessible :name, :viewable_by, :parent_id, :parent
   attr_accessible :members_invitable_by, :email_new_motion

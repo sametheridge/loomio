@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120521041044) do
+ActiveRecord::Schema.define(:version => 20120526010115) do
 
   create_table "comment_votes", :force => true do |t|
     t.integer  "comment_id"
     t.integer  "user_id"
     t.boolean  "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "comment_votes", ["comment_id"], :name => "index_comment_votes_on_comment_id"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
   create_table "did_not_votes", :force => true do |t|
     t.integer  "user_id"
     t.integer  "motion_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "did_not_votes", ["motion_id"], :name => "index_did_not_votes_on_motion_id"
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
   create_table "discussion_read_logs", :force => true do |t|
     t.integer  "discussion_activity_when_last_read"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "discussion_id"
   end
 
@@ -64,10 +64,11 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
   create_table "discussions", :force => true do |t|
     t.integer  "group_id"
     t.integer  "author_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "title"
     t.integer  "activity",   :default => 0, :null => false
+    t.integer  "message_id"
   end
 
   add_index "discussions", ["author_id"], :name => "index_discussions_on_author_id"
@@ -75,8 +76,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "viewable_by"
     t.string   "members_invitable_by"
     t.integer  "parent_id"
@@ -86,9 +87,17 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
   create_table "memberships", :force => true do |t|
     t.integer  "group_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "access_level"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "author_id"
+    t.text     "body"
+    t.string   "ancestry"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "motions", :force => true do |t|
@@ -96,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
     t.text     "description"
     t.integer  "author_id"
     t.integer  "facilitator_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "phase",          :default => "voting", :null => false
     t.string   "discussion_url", :default => "",       :null => false
     t.datetime "close_date"
@@ -134,8 +143,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
     t.boolean  "admin",                                :default => false
     t.string   "name"
     t.string   "unconfirmed_email"
@@ -156,8 +165,8 @@ ActiveRecord::Schema.define(:version => 20120521041044) do
     t.integer  "motion_id"
     t.integer  "user_id"
     t.string   "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "statement"
   end
 

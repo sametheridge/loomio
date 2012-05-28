@@ -1,18 +1,9 @@
-.group-title
-  %span
-    %h2
-      = link_to @group.parent.name, group_path(@group), title: "group" unless @group.parent.nil?
-      = " - " unless @group.parent.nil?
-      = link_to @group.name, group_path(@group)
-  %h3 New Discussion
-= form_for @discussion do |f|
-  = f.label :title, "Title"
-  #new-proposal-title
-    .control-group
-      .presence-required= f.text_field :title, class: "presence-required inputError limit"
-      .error-message Please fill in a discussion title
-    .character-counter
-  = f.label :comment, "Comment"
-  = f.text_area :comment
-  .check-presence= f.submit "Create discussion", class: "btn btn-info"
-  = f.hidden_field :group_id
+%h1 New Discussion
+=simple_form_for([@group, @discussion]) do |f|
+  =f.input :message_id, as: :hidden if params[:message_id]
+  =f.input :title
+  -unless params[:message_id]
+    =f.simple_fields_for :message do |mf|
+      =render 'messages/fields', f: mf
+  =f.submit
+
