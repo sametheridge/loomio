@@ -1,9 +1,9 @@
 %h1=@discussion.title
 
-%ul.stats
-  %li #{@discussion.num_participants} Participants
-  %li #{@discussion.num_messages} Messages 
-  %li #{@discussion.num_useful} Marked useful
+-#%ul.stats
+  -#%li #{@discussion.num_participants} Participants
+  -#%li #{@discussion.num_messages} Messages 
+  -#%li #{@discussion.num_useful} Marked useful
 
 =render @discussion.message
 
