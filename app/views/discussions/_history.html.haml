@@ -9,6 +9,11 @@
       - if message.is_a?(Vote)
         %li.history-item
           .comment.position.clearfix
+            .medium-user-avatar.avatar-canvas
+              - if current_user.avatar_url
+                = image_tag current_user.avatar_url(:medium)
+              - else
+                %span.medium-user-initials.initials-decoration= current_user.avatar_initials
             .position-icon
               = render partial: "motions/display_icons", locals: { position: message.position }
             .comment-username= link_to(message.user_name, "#")
