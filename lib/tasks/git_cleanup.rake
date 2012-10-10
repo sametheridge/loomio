@@ -46,7 +46,7 @@ namespace :git do
       end
     end
 
-    puts "Staging and production branch will not be removed"
+    puts exclude_branches.join(", ") + " branch will not be removed"
     puts "Continue? (y/n)"
 
     continue = $stdin.gets.strip
